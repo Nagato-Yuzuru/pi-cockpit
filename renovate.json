@@ -1,0 +1,23 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", ":semanticCommits", "helpers:pinGitHubActionDigests"],
+  "minimumReleaseAge": "7 days",
+  "internalChecksFilter": "strict",
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "description": "One PR for non-major updates of the development tools.",
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "groupName": "development tools"
+    },
+    {
+      "description": "Every dependency is a development tool and CI runs the full verify on the new versions, so a green run is enough below a major release. A group merges only when all of its updates can merge, so the rule covers the whole group. The main branch takes changes only through pull requests, so Renovate opens one and GitHub merges it when the required checks pass.",
+      "matchUpdateTypes": ["minor", "patch", "digest", "pin", "lockFileMaintenance"],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
+    }
+  ]
+}
