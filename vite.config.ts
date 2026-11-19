@@ -126,6 +126,6 @@ export default defineConfig({
     ignorePatterns: ['pnpm-lock.yaml'],
   },
   test: {
-    include: ['extensions/**/*.test.ts', 'shared/**/*.test.ts'],
+    include: ['extensions/**/*.test.ts', 'shared/**/*.test.ts', 'scripts/**/*.test.ts'],
   },
 })
