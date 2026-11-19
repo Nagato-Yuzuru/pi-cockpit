@@ -12,5 +12,5 @@
     "erasableSyntaxOnly": true,
     "skipLibCheck": true
   },
-  "include": ["extensions", "shared", "vite.config.ts"]
+  "include": ["extensions", "shared", "scripts", "vite.config.ts"]
 }

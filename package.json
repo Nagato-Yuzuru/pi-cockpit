@@ -15,6 +15,7 @@
   },
   "scripts": {
     "dev": "pi -e .",
+    "fixture": "node scripts/fixture.ts",
     "check": "vp check && jactionlint",
     "fix": "vp check --fix",
     "test": "vp test run --passWithNoTests",
