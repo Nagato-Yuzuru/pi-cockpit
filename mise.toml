@@ -3,7 +3,7 @@ node = "26.13.1"
 pnpm = "12.20.0"
 prek = "0.5.10"
 git-cliff = "2.14.2"
-jactionlint = { version = "v2.5.0", workflow = "release.yaml" }
+jactionlint = { version = "v2.6.0", workflow = "release.yaml" }
 
 [settings]
 lockfile = true
