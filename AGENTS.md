@@ -15,7 +15,9 @@ extensions/<name>/
   index.ts      # default export (pi: ExtensionAPI) => void; wiring only
   core.ts       # pure calculation; imports only types from pi
   core.test.ts
+  behavior.test.ts  # the feature in a real pi; see Tests
 shared/         # code that two or more features use
+harness/        # runs pi in a test; only tests import it
 ```
 
 A small feature can be only `index.ts`.
@@ -36,4 +38,7 @@ A small feature can be only `index.ts`.
 ### Tests
 
 - Test `core.ts` with unit tests (`vp test`).
+- Test a behavior in `extensions/<name>/behavior.test.ts` with `startPi` from `harness/pi.ts`. It runs the interactive mode of pi in the test process, with only the extensions that the test gives. The test sends keys, then reads the screen and the component tree.
+- Write the behavior test first. Make sure that it fails for the correct reason, then write the code.
+- State the intent with an explicit assertion. Wait with `pi.waitFor`, not with a fixed time.
 - To check that pi loads a feature, run `pi -e . --mode rpc` and send `{"type":"get_commands"}` or another RPC command that shows the feature.

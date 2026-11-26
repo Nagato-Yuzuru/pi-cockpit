@@ -14,7 +14,7 @@ import { join, resolve } from 'node:path'
 
 const root = resolve(import.meta.dirname, '..')
 
-const models = {
+export const models = {
   providers: {
     fixture: {
       name: 'Fixture',
