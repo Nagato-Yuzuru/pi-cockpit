@@ -15,6 +15,7 @@
   },
   "scripts": {
     "dev": "pi -e .",
+    "fixture": "node scripts/fixture.ts",
     "check": "vp check && jactionlint",
     "fix": "vp check --fix",
     "test": "vp test run --passWithNoTests",
@@ -28,6 +29,7 @@
     "@earendil-works/pi-coding-agent": "1.5.2",
     "@earendil-works/pi-tui": "1.5.2",
     "@types/node": "26.6.6",
+    "@xterm/headless": "6.0.0",
     "vite-plus": "1.7.0"
   }
 }
